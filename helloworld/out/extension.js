@@ -19,6 +19,7 @@ function activate(context) {
         axios.get('http://api.icndb.com/jokes/random?firstName=John&lastName=Doe').then(function (response) {
             // handle success
             vscode.window.showInformationMessage(response.data.value.joke);
+            const panel = vscode.window.createWebviewPanel("Test", "Title", vscode.ViewColumn.Two, {});
         });
         // Display a message box to the user
     });
